@@ -29,12 +29,10 @@ jobs:
         cache: maven
     - name: Compile and Test
       run: mvn compile test package
-    - name: Add coverage to PR
-      id: jacoco
-      uses: madrapps/jacoco-report@v1.3
-      with:
-        paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
+      with:
+        file: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+        format: jacoco
     
 
