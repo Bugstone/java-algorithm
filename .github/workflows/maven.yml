@@ -29,3 +29,6 @@ jobs:
         cache: maven
     - name: Compile and Test
       run: mvn compile test
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@v2
+
