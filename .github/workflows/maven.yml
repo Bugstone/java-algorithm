@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Compile and Test
-      run: mvn compile test
+      run: mvn compile test surefire-report:report
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
 
