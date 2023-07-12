@@ -30,7 +30,7 @@ jobs:
     - name: Compile and Test
       run: mvn clean package
     - name: test
-      run: ls -al ${{ github.workspace }}/target/site/jacoco
+      run: ls -al ${{ github.workspace }}/target
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
       with:
