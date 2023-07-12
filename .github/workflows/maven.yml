@@ -32,7 +32,7 @@ jobs:
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
       with:
-        file: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+        file: target/site/jacoco/jacoco.xml
         format: jacoco
     
 
