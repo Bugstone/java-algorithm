@@ -28,9 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Compile and Test
-      run: mvn compile test package
+      run: mvn clean package
     - name: test
-      run: ls -al ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+      run: ls -al ${{ github.workspace }}/target/site/jacoco
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
       with:
