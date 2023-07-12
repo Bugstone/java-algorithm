@@ -29,10 +29,12 @@ jobs:
         cache: maven
     - name: Compile and Test
       run: mvn compile test package
+    - name: test
+      run: ls -al ${{ github.workspace }}
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2
       with:
-        file: target/site/jacoco/jacoco.xml
+        file: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
         format: jacoco
     
 
