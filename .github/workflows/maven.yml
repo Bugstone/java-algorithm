@@ -29,10 +29,12 @@ jobs:
         cache: maven
     - name: Compile and Test
       run: mvn clean install
-    - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v2
-      with:
-        file: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
-        format: jacoco
+      
+  main:
+  
+    runs-on: ubuntu-latest
+    steps:
+      -name: "github action for CAAS"
+       uses: Bugstone/caas-github-action@main
     
 
