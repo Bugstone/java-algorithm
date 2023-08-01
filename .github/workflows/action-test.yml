@@ -1,0 +1,11 @@
+name: github action for caas
+
+on:
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Github Action for CAAS"
+        uses: Bugstone/cass-github-action
