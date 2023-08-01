@@ -29,12 +29,5 @@ jobs:
         cache: maven
     - name: Compile and Test
       run: mvn clean install
-      
-  main:
-  
-    runs-on: ubuntu-latest
-    steps:
-      -name: "github action for CAAS"
-       uses: Bugstone/caas-github-action@main
     
 
