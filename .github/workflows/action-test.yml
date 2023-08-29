@@ -18,3 +18,5 @@ jobs:
         cache: maven
     - name: "Github Action for CAAS"
       uses: bugstone/caas-github-action@main
+      env:
+        CAAS_API_KEY: ${{ secrets.CAAS_API_KEY }}
