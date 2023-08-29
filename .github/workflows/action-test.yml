@@ -4,10 +4,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  main:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: "Github Action for CAAS"
-        uses: bugstone/caas-github-action@main
-        with:
-          caas-secret-key: ${{secrets.CAAS_API_KEY}}
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: "Github Action for CAAS"
+      uses: bugstone/caas-github-action@main
+      with:
+        caas-secret-key: ${{secrets.CAAS_API_KEY}}
