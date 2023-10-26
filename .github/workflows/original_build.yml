@@ -1,4 +1,4 @@
-name: github action for caas
+name: Java CI with Maven
 
 on:
   workflow_dispatch:
@@ -16,7 +16,5 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: "Github Action for CAAS"
-      uses: bugstone/caas-github-action@main
-      env:
-        CAAS_API_KEY: ${{ secrets.CAAS_API_KEY }}
+    - name: Compile and Test
+      run: mvn clean install
